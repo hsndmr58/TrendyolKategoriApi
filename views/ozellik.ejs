@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center;height: 45px;border-bottom: 1px solid black;line-height: 45px;background: white;position: sticky;top: 0px;margin-bottom: 20px;"> <h1>Trendyol Kategori Özellikleri</h1></div>
+    <h1><a href="/">Geri Dön</a></h1>
+    <h1><%=ozu.name%></h1>
+    <%for(i=0;i< ozu.categoryAttributes.length;i++){%>
+    <%if(ozu.categoryAttributes[i].attribute){%>
+    <ul><h3><%=ozu.categoryAttributes[i].attribute.name%></h3>
+    <%for(j=0;j< ozu.categoryAttributes[i].attributeValues.length;j++){%>
+       <li><%=ozu.categoryAttributes[i].attributeValues[j].name%></li>
+    <%}%>
+    <%}%>
+    </ul>
+    <%}%>
+</body>
+</html>

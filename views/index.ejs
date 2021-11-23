@@ -8,57 +8,47 @@
 </head>
 
 <style>
+    a{
+        
+        text-decoration: none;
+        color: #000;
+        
+    }
+    a:hover{
+        
+        text-decoration: none;
+        color: blue;
+        background-color: chartreuse;
+        
+    }
+    li{
+        list-style: none;
+    }
     .a{
-        font-size: 10px;
+        font-size: 14.5px;
         display: flex;
         flex-wrap: wrap;
     }
     .b{
-        font-size: 10px;
-        list-style: none;
-        color:blue;
-        border-left: 1px solid black;
+        border: 1px black solid;
     }
-    .c{
-        font-size: 10px;
-        list-style: none;
-        color: red;
-        border-left: 1px solid blue;
-    }
-    .d{
-        font-size: 10px;
-        list-style: none;
-        color: gray;
-        border-left: 1px solid red;
-    }
-    .e{
-        font-size: 10px;
-        list-style: none;
-        color: green;
-        border-left: 1px solid gray;
-    }
-    .f{
-        font-size: 10px;
-        list-style:none;
-        color:purple;
-        border-left: 1px solid green;
-    }
+   
+
 </style>
 <body style="margin: 0%;">
-   <div style="text-align: center;"> <h1>Trendyol Kategori Ağacı</h1></div>
-   <hr>
+   <div style="text-align: center;height: 45px;border-bottom: 1px solid black;line-height: 45px;background: white;position: sticky;top: 0px;margin-bottom: 20px;"> <h1>Trendyol Kategori Ağacı</h1></div>
     <div class="a"><%for(i=0;i< datau.categories.length;i++){%>
-        <%=datau.categories[i].name%>
+        <a href="/ozellik?id=<%=datau.categories[i].id%>"><%=datau.categories[i].name%></a>
         <ul class="b"><%for(j=0;j< datau.categories[i].subCategories.length;j++){%>
-            <li><%=datau.categories[i].subCategories[j].name%></li>
+            <li><a href="/ozellik?id=<%=datau.categories[i].subCategories[j].id%>"><%=datau.categories[i].subCategories[j].name%></a></li>
             <ul  class="c"><%for(k=0;k< datau.categories[i].subCategories[j].subCategories.length;k++){%>
-                <li><%=datau.categories[i].subCategories[j].subCategories[k].name%></li>
+                <li><a href="/ozellik?id=<%=datau.categories[i].subCategories[j].subCategories[k].id%>"><%=datau.categories[i].subCategories[j].subCategories[k].name%></a></li>
                 <ul  class="d"> <%for(a=0;a< datau.categories[i].subCategories[j].subCategories[k].subCategories.length;a++){%>
-                <li><%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].name%></li>
+                <li><a href="/ozellik?id=<%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].id%>"><%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].name%></a></li>
                    <ul class="e"> <%for(b=0;b< datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories.length;b++){%>
-                        <li><%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].name%></li>
+                        <li><a href="/ozellik?id=<%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].id%>"><%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].name%></a></li>
                         <ul class="f"> <%for(c=0;c< datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].subCategories.length;c++){%>
-                            <li><%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].subCategories[c].name%></li>
+                            <li><a href="/ozellik?id=<%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].subCategories[c].id%>"><%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].subCategories[c].name%></a></li>
                         <%}%></ul>
                     <%}%></ul>
                 <%}%></ul>
