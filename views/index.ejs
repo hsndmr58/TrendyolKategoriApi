@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trendyol Api</title>
+</head>
+
+<style>
+    .a{
+        font-size: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .b{
+        font-size: 10px;
+        list-style: none;
+        color:blue;
+        border-left: 1px solid black;
+    }
+    .c{
+        font-size: 10px;
+        list-style: none;
+        color: red;
+        border-left: 1px solid blue;
+    }
+    .d{
+        font-size: 10px;
+        list-style: none;
+        color: gray;
+        border-left: 1px solid red;
+    }
+    .e{
+        font-size: 10px;
+        list-style: none;
+        color: green;
+        border-left: 1px solid gray;
+    }
+    .f{
+        font-size: 10px;
+        list-style:none;
+        color:purple;
+        border-left: 1px solid green;
+    }
+</style>
+<body style="margin: 0%;">
+   <div style="text-align: center;"> <h1>Trendyol Kategori Ağacı</h1></div>
+   <hr>
+    <div class="a"><%for(i=0;i< datau.categories.length;i++){%>
+        <%=datau.categories[i].name%>
+        <ul class="b"><%for(j=0;j< datau.categories[i].subCategories.length;j++){%>
+            <li><%=datau.categories[i].subCategories[j].name%></li>
+            <ul  class="c"><%for(k=0;k< datau.categories[i].subCategories[j].subCategories.length;k++){%>
+                <li><%=datau.categories[i].subCategories[j].subCategories[k].name%></li>
+                <ul  class="d"> <%for(a=0;a< datau.categories[i].subCategories[j].subCategories[k].subCategories.length;a++){%>
+                <li><%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].name%></li>
+                   <ul class="e"> <%for(b=0;b< datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories.length;b++){%>
+                        <li><%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].name%></li>
+                        <ul class="f"> <%for(c=0;c< datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].subCategories.length;c++){%>
+                            <li><%=datau.categories[i].subCategories[j].subCategories[k].subCategories[a].subCategories[b].subCategories[c].name%></li>
+                        <%}%></ul>
+                    <%}%></ul>
+                <%}%></ul>
+            <%}%></ul>
+        <%}%></ul>
+    <%}%></div>
+</body>
+</html>
